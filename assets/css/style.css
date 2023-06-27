@@ -15,8 +15,11 @@ label{
 }
 input{
     font-size: 15px;
-    padding: 10px 15px;
+    padding: 5px 10px;
 }
 div{
     margin-top: 15px;
+}
+.button{
+    padding: 5px 30px;
 }
