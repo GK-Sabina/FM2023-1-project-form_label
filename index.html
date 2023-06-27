@@ -8,20 +8,39 @@
 </head>
 <body>
     <form class="form" action="/text-direction" method="GET">
-        <h2>Login</h2>
-        <!-- <label for="email">Type your email</label>
-        <input type="text" placeholder="Email" name="email" id="email" autofocus> -->
         <label>
-            Type your email:
-            <input type="text" placeholder="12345@gmail.com" name="email" autofocus pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+            Name user:
+            <input type="text" placeholder="Name" name="name" autofocus>
         </label>
-        <!-- <label for="password">Type your password</label>
-        <input type="password" placeholder="Password" name="password" id="password"> -->
-        <label>Type your password
-            <input type="password" placeholder="qwerty12345" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$">
+       
+        <label>
+            Email user:
+            <input type="email" placeholder="12345@mail.com" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
         </label>
-        <button type="submit">Login</button>
-        <button type="reset">Reset</button>
+
+        <label>
+            Password:
+            <input type="password" placeholder="12345SSa" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$">
+        </label>
+
+        <label>
+            Telephone:
+            <input type="tel" placeholder="+380999966996" name="tel">
+        </label>
+
+        <label>
+            Address:
+            <input type="text" placeholder="Ukraine, Kyiv" name="address">
+        </label>
+
+        <label>
+            Date of birth:
+            <input type="date" placeholder="01.01.1990" name="date">
+        </label>
+        <div>
+        <button class="button" type="submit">OK</button> 
+        <button class="button" type="reset">Reset</button>
+        </div>
     </form>
 </body>
 </html>
