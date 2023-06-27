@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="form">
+    <form class="form" action="/text-direction" method="GET">
         <h2>Login</h2>
         <!-- <label for="email">Type your email</label>
         <input type="text" placeholder="Email" name="email" id="email" autofocus> -->
         <label>
             Type your email:
-            <input type="text" placeholder="Email" name="email" autofocus>
+            <input type="text" placeholder="12345@gmail.com" name="email" autofocus pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
         </label>
         <!-- <label for="password">Type your password</label>
         <input type="password" placeholder="Password" name="password" id="password"> -->
         <label>Type your password
-            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="qwerty12345" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$">
         </label>
         <button type="submit">Login</button>
         <button type="reset">Reset</button>
