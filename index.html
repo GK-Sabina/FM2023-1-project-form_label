@@ -8,35 +8,98 @@
 </head>
 <body>
     <form class="form" action="/text-direction" method="GET">
+     <fieldset>
+        <legend>User Info:</legend>
+        <div class="info-user">
         <label>
-            Name user:
-            <input type="text" placeholder="Name" name="name" autofocus>
+            User Name: <span class="required"></span>
+            <input type="text" placeholder="Name" name="name" autofocus required>
         </label>
        
         <label>
-            Email user:
-            <input type="email" placeholder="12345@mail.com" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+            User Email: <span class="required"></span>
+            <input type="email" placeholder="12345@mail.com" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required>
         </label>
 
         <label>
-            Password:
-            <input type="password" placeholder="12345SSa" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$">
+            Password: <span class="required"></span>
+            <input type="password" placeholder="12345SSa" name="password" required>
         </label>
 
         <label>
-            Telephone:
-            <input type="tel" placeholder="+380999966996" name="tel">
+            Phone number: <span class="required"></span>
+            <input type="tel" placeholder="+380999966996" name="tel" required>
         </label>
 
         <label>
-            Address:
-            <input type="text" placeholder="Ukraine, Kyiv" name="address">
+            Address: <span class="required"></span>
+            <input type="text" placeholder="Soborniy prospect, 1" name="address" required>
         </label>
 
         <label>
             Date of birth:
             <input type="date" placeholder="01.01.1990" name="date">
         </label>
+
+        </div>
+        </fieldset>
+        
+        <h2>Gender:</h2>
+        <label class="gender">
+            <input type="radio" value="Male" name="gender"> Male
+        </label>
+        <label class="gender">
+            <input type="radio" value="Female" name="gender"> Female
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" name="isSubscribed">
+            Do you agree to the email-newsletter?
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" name="isLike">
+            Do you like our site?
+        </label>
+
+        <label class="checkbox">
+            <input type="checkbox" name="isAgree" required>
+            Do you agree to your personal data processing?
+            <span class="required"></span>
+        </label>
+
+        <fieldset>
+            <legend>Add file:</legend>
+            <input type="file" name="file">
+        </fieldset>
+
+        <!-- <fieldset>
+            <legend>Choose your city</legend>
+            <select name="city">
+                <option value="Kyiv">Kyiv</option>
+             <optgroup label="Dnipropetrovska obl.">
+                <option value="Dnipro">Dnipro</option>
+                <option value="Pavlograd">Pavlograd</option>
+                <option value="Kryvyi Rig">Kryvyi Rig</option>
+            </optgroup>
+                <option value="Kharkiv">Kharkiv</option>
+            </select>
+        </fieldset> -->
+
+        <fieldset>
+            <legend>Choose your city</legend>
+            <input type="text" name="city" list="city-list">
+        <datalist id="city-list">
+            <option value="Kyiv">Kyiv</option>
+            <option value="Dnipro">Dnipro</option>
+            <option value="Pavlograd">Pavlograd</option>
+            <option value="Kryvyi Rig">Kryvyi Rig</option>
+            <option value="Kharkiv">Kharkiv</option>
+        </datalist>
+        </fieldset>
+        Leave a review:
+        <textarea name="text" cols="10" rows="10" maxlength="20"></textarea>
+
         <div>
         <button class="button" type="submit">OK</button> 
         <button class="button" type="reset">Reset</button>
