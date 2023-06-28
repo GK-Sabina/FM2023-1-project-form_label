@@ -4,107 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kablammo&family=Moirai+One&family=Shantell+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <title>Form | Feedback</title>
 </head>
+    
 <body>
-    <form class="form" action="/text-direction" method="GET">
-     <fieldset>
-        <legend>User Info:</legend>
-        <div class="info-user">
+    <form>
+    
+   <h1>Форма зворотнього зв'язку</h1>
+    
+    <fieldset class="fieldset">
+        <legend>Особисті дані<span class="required"></span></legend>
         <label>
-            User Name: <span class="required"></span>
-            <input type="text" placeholder="Name" name="name" autofocus required>
+            Ім'я:
+            <input type="text" placeholder="Іван" name="name" autofocus required>
         </label>
-       
         <label>
-            User Email: <span class="required"></span>
+            Електронна пошта:
             <input type="email" placeholder="12345@mail.com" name="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required>
         </label>
-
         <label>
-            Password: <span class="required"></span>
-            <input type="password" placeholder="12345SSa" name="password" required>
+            Дата народження:
+            <input type="date" name="date">
         </label>
-
-        <label>
-            Phone number: <span class="required"></span>
-            <input type="tel" placeholder="+380999966996" name="tel" required>
-        </label>
-
-        <label>
-            Address: <span class="required"></span>
-            <input type="text" placeholder="Soborniy prospect, 1" name="address" required>
-        </label>
-
-        <label>
-            Date of birth:
-            <input type="date" placeholder="01.01.1990" name="date">
-        </label>
-
-        </div>
-        </fieldset>
-        
-        <h2>Gender:</h2>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Стать:<span class="required"></span></legend>
         <label class="gender">
-            <input type="radio" value="Male" name="gender"> Male
+            <input type="radio" value="Male" name="gender" required> Чоловік
         </label>
         <label class="gender">
-            <input type="radio" value="Female" name="gender"> Female
+            <input type="radio" value="Female" name="gender" required> Жінка
         </label>
-
-        <label class="checkbox">
-            <input type="checkbox" name="isSubscribed">
-            Do you agree to the email-newsletter?
+        <label class="gender">
+            <input type="radio" value="Other" name="gender" required> Інше
         </label>
-
-        <label class="checkbox">
-            <input type="checkbox" name="isLike">
-            Do you like our site?
+    </fieldset>
+    
+    <fieldset>
+        <legend>Додаткові налаштування</legend>
+        <label>
+            <input type="checkbox" name="isNewsletter">
+            Підписатися на розсилку
         </label>
-
-        <label class="checkbox">
-            <input type="checkbox" name="isAgree" required>
-            Do you agree to your personal data processing?
-            <span class="required"></span>
-        </label>
-
-        <fieldset>
-            <legend>Add file:</legend>
-            <input type="file" name="file">
-        </fieldset>
-
-        <!-- <fieldset>
-            <legend>Choose your city</legend>
-            <select name="city">
-                <option value="Kyiv">Kyiv</option>
-             <optgroup label="Dnipropetrovska obl.">
-                <option value="Dnipro">Dnipro</option>
-                <option value="Pavlograd">Pavlograd</option>
-                <option value="Kryvyi Rig">Kryvyi Rig</option>
+    </fieldset>
+    
+    <fieldset>
+    <legend>Оберіть категорію своїх інтересів:<span class="required"></span></legend>
+            <select name="hobby" required>
+            <optgroup label="Технологїї">
+                <option value="Programming">Программування</option>
+                <option value="Net">Мережі</option>
+                <option value="Other">Інше</option>
             </optgroup>
-                <option value="Kharkiv">Kharkiv</option>
+            <optgroup label="Музика">
+                <option value="Rock">Рок</option>
+                <option value="Pop">Поп</option>
+                <option value="Other">Інше</option>
+            </optgroup>
             </select>
-        </fieldset> -->
+    </fieldset>
+    
+    <fieldset>
+        <legend>Як Ви дізналися про нас?<span class="required"></span></legend>
+        <label>
+            <input type="radio" value="SearchSystem" name="survey" required> Пошукові системи
+        </label>
+        <label>
+            <input type="radio" value="SocialMedia" name="survey" required> Соціальні мережі
+        </label>
+        <label>
+            <input type="radio" value="Advice" name="survey" required> Порада друзів/знайомих
+        </label>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Опишіть свої враження/скарги/пропозиції:<span class="required"></span></legend>
+        <textarea name="text" cols="10" rows="10" maxlength="50" required></textarea>
+    </fieldset>
+    
+    <div class="button" >
+        <button class="button" type="submit">Надіслати форму</button>
+    </div>
 
-        <fieldset>
-            <legend>Choose your city</legend>
-            <input type="text" name="city" list="city-list">
-        <datalist id="city-list">
-            <option value="Kyiv">Kyiv</option>
-            <option value="Dnipro">Dnipro</option>
-            <option value="Pavlograd">Pavlograd</option>
-            <option value="Kryvyi Rig">Kryvyi Rig</option>
-            <option value="Kharkiv">Kharkiv</option>
-        </datalist>
-        </fieldset>
-        
-        Leave a review:
-        <textarea name="text" cols="10" rows="10" maxlength="20"></textarea>
-
-        <div>
-        <button class="button" type="submit">OK</button> 
-        <button class="button" type="reset">Reset</button>
-        </div>
     </form>
 </body>
 </html>
